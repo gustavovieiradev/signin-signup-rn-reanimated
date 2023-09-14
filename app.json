@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "signin-signup-rn",
+    "slug": "signin-signup-rn",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
