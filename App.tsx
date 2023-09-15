@@ -1,11 +1,20 @@
-import { View } from 'react-native';
-import React from 'react';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { LoginScreen } from '@/LoginScreen';
+import { SignUpScreen } from '@/SignUpScreen';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
 
+function App() {
   return (
-    <View className='bg-red-600 flex-1'>
-
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Login' screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;
