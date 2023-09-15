@@ -44,7 +44,7 @@ export function LoginScreen() {
           </Animated.View>
           <Animated.View entering={FadeInDown.delay(600).duration(1000).springify()} className='flex-row justify-center'>
             <Text>Don't have an account? </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+            <TouchableOpacity onPress={() => navigation.push('SignUp')}>
               <Text className='text-sky-600'>SignUp</Text>
             </TouchableOpacity>
           </Animated.View>
