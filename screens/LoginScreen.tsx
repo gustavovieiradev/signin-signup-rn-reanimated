@@ -5,8 +5,10 @@ import { StatusBar } from 'expo-status-bar';
 import BackgroundPng from '../assets/images/background.png';
 import LightPng from '../assets/images/light.png';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
+import { useNavigation } from '@react-navigation/native';
 
 export function LoginScreen() {
+  const navigation = useNavigation<any>();
   return (
     <View className='bg-white h-full w-full'>
       <StatusBar style='light' />
@@ -42,7 +44,7 @@ export function LoginScreen() {
           </Animated.View>
           <Animated.View entering={FadeInDown.delay(600).duration(1000).springify()} className='flex-row justify-center'>
             <Text>Don't have an account? </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
               <Text className='text-sky-600'>SignUp</Text>
             </TouchableOpacity>
           </Animated.View>
